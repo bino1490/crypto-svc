@@ -57,18 +57,6 @@ func (mr *MockMemoryServiceMockRecorder) Get(w, r interface{}) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Get", reflect.TypeOf((*MockMemoryService)(nil).Get), w, r)
 }
 
-// GetMemData mocks base method
-func (m *MockMemoryService) GetMemData(w http.ResponseWriter, r *http.Request) {
-	m.ctrl.T.Helper()
-	m.ctrl.Call(m, "GetMemData", w, r)
-}
-
-// GetMemData indicates an expected call of GetMemData
-func (mr *MockMemoryServiceMockRecorder) GetMemData(w, r interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetMemData", reflect.TypeOf((*MockMemoryService)(nil).GetMemData), w, r)
-}
-
 // GetDataByKey mocks base method
 func (m *MockMemoryService) GetDataByKey(w http.ResponseWriter, r *http.Request) {
 	m.ctrl.T.Helper()
@@ -79,16 +67,4 @@ func (m *MockMemoryService) GetDataByKey(w http.ResponseWriter, r *http.Request)
 func (mr *MockMemoryServiceMockRecorder) GetDataByKey(w, r interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetDataByKey", reflect.TypeOf((*MockMemoryService)(nil).GetDataByKey), w, r)
-}
-
-// Post mocks base method
-func (m *MockMemoryService) Post(w http.ResponseWriter, r *http.Request) {
-	m.ctrl.T.Helper()
-	m.ctrl.Call(m, "Post", w, r)
-}
-
-// Post indicates an expected call of Post
-func (mr *MockMemoryServiceMockRecorder) Post(w, r interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Post", reflect.TypeOf((*MockMemoryService)(nil).Post), w, r)
 }

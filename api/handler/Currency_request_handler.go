@@ -9,10 +9,10 @@ import (
 
 // InMemReqHandler the Handler Layer for future business logic enhancement
 // for now just redirecting to Service Layer
-func InMemReqHandler(inMemSvc *service.MemHandlers) http.Handler {
+func InCurrencyReqHandler(inMemSvc *service.MemHandlers) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 
-		logger.Logger.Debug("Entering handler.InMemReqHandler() ...")
+		logger.Logger.Debug("Entering handler.InCurrencyReqHandler() ...")
 		// redirects to service layer
 		inMemSvc.InMemGetPOST(w, r)
 		return

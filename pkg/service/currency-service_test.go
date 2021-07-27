@@ -6,18 +6,14 @@ import (
 	reflect "reflect"
 	"testing"
 
-	"github.com/bino1490/crypto-svc/pkg/repository"
 	gomock "github.com/golang/mock/gomock"
 )
 
 func TestNewMemService(t *testing.T) {
-	type args struct {
-		r repository.DbRepository
-	}
 	tests := []struct {
 		name string
-		args args
-		want *Service
+		//args args
+		want *MemoryService
 	}{
 		// TODO: Add test cases.
 	}
@@ -36,7 +32,7 @@ func TestGetRecords(t *testing.T) {
 
 	testService := NewInMemService()
 
-	req := httptest.NewRequest(http.MethodGet, "/in-memory", nil)
+	req := httptest.NewRequest(http.MethodGet, "/currency/test", nil)
 	res := httptest.NewRecorder()
 	testService.Get(res, req)
 	if res.Code != http.StatusOK {
@@ -50,25 +46,10 @@ func TestInMemGetPOST(t *testing.T) {
 
 	testService := NewInMemService()
 
-	req := httptest.NewRequest(http.MethodGet, "/in-memory", nil)
+	req := httptest.NewRequest(http.MethodGet, "/currency/all", nil)
 	res := httptest.NewRecorder()
 	testService.InMemGetPOST(res, req)
 	if res.Code != http.StatusOK {
-		t.Errorf("got status %d but wanted %d", res.Code, http.StatusTeapot)
-	}
-}
-
-func TestPOSTNegative(t *testing.T) {
-	mockCtrl := gomock.NewController(t)
-	defer mockCtrl.Finish()
-
-	testService := NewInMemService()
-
-	req := httptest.NewRequest(http.MethodPost, "/in-memory", nil)
-	req.Header.Set("Content-Type", "application/json")
-	res := httptest.NewRecorder()
-	testService.Post(res, req)
-	if res.Code != http.StatusBadRequest {
 		t.Errorf("got status %d but wanted %d", res.Code, http.StatusTeapot)
 	}
 }
