@@ -1,0 +1,35 @@
+
+profile: prod
+
+application:
+  name: Getir-Case-Study
+
+http:
+  port: 8080
+  readTimeout: 5
+  writeTimeout: 10
+  maxHeaderBytes: 4096
+
+
+logging:
+  logfile:
+    access:
+      loglevel: ERROR
+      path: /var/log/app/
+      name: access.log
+    service:
+      loglevel: ERROR
+      path: /var/log/app/
+      name: service.log
+    bootstrap:
+      loglevel: ERROR
+      path: /var/log/app/
+      name: bootstrap.log
+
+
+database:
+  mongodb:
+    enable: true
+    connectionstring: mongodb+srv://challengeUser:WUMglwNBaydH8Yvu@challenge-xzwqd.mongodb.net/getir-case-study?retryWrites=true
+    collection: records
+    db: getir-case-study

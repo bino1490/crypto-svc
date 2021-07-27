@@ -1,0 +1,31 @@
+profile: local
+
+application:
+  name: Getir-Case-Study
+
+http:
+  port: 8080
+
+logging:
+  logfile:
+    access:
+      loglevel: DEBUG
+      path: ./log/
+      name: access.log
+    service:
+      loglevel: DEBUG
+      path: ./log/
+      name: service.log
+    bootstrap:
+      loglevel: DEBUG
+      path: ./log/
+      name: bootstrap.log
+
+
+database:
+  mongodb:
+    enable: true
+    connectionstring: mongodb+srv://challengeUser:WUMglwNBaydH8Yvu@challenge-xzwqd.mongodb.net/getir-case-study?retryWrites=true
+    collection: records
+    db: getir-case-study
+
