@@ -2,7 +2,7 @@
 profile: prod
 
 application:
-  name: Getir-Case-Study
+  name: Crypto-SVC
 
 http:
   port: 8080
